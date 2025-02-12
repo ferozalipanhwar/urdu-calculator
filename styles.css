@@ -1,0 +1,85 @@
+/* styles.css */
+
+body {
+  font-family: 'Noto Naskh Arabic', sans-serif;
+  background-color: #c64646; /* Ajrak red background */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  width: 90%; /* Responsive width */
+  max-width: 400px; /* Maximum width for larger screens */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 100%; /* Fill the entire screen height */
+  max-height: 80vh; /* Prevent overflow on smaller screens */
+  display: flex;
+  flex-direction: column; /* Ensures display and buttons stack */
+}
+
+.display {
+  background-color: #B22222; /* Sindhi Ajrak theme */
+  color: #fff;
+  font-size: 2rem;
+  text-align: right;
+  padding: 20px;
+  direction: rtl; /* For Urdu/Sindhi digits */
+  flex: 1; /* Takes up space proportionally */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 1px;
+  background-color: #8B0000;
+  flex: 2; /* Takes up more space than the display */
+}
+
+.btn {
+  background-color: #fff;
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #FFD700; /* Golden highlight */
+  transform: scale(1.1);
+}
+
+.operator {
+  background-color: #B22222;
+  color: #fff;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  background-color: #FFA500; /* Sindhi vibrant feel */
+}
+
+.btn[data-value="="] {
+  grid-column: span 4; /* Make the equal button span all 4 columns */
+  background-color: #B22222;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+
+  .btn[data-value="="] {
+    font-size: 1.5rem;
+  }
+}
